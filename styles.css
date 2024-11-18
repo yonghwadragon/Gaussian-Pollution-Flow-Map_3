@@ -1,0 +1,279 @@
+/* 기본 스타일 초기화 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eef2f3;
+    padding: 20px;
+}
+
+.container {
+    max-width: 2400px; /* 기존 1600px에서 확장 */
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 2.5em; /* 폰트 크기 약간 증가 */
+}
+
+/* 컨트롤 섹션 */
+.controls {
+    margin-bottom: 25px; /* 여백 약간 증가 */
+}
+
+.controls label {
+    font-size: 1.2em; /* 폰트 크기 증가 */
+    margin-right: 15px; /* 여백 증가 */
+    color: #34495e;
+}
+
+.controls select {
+    padding: 10px 16px; /* 패딩 증가 */
+    font-size: 1.2em; /* 폰트 크기 증가 */
+    border: 1.5px solid #bdc3c7; /* 테두리 두께 증가 */
+    border-radius: 5px; /* 테두리 반경 증가 */
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.controls select:hover {
+    border-color: #95a5a6;
+}
+
+/* 그래프 컨테이너 */
+.graph-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px; /* 간격 증가 */
+    margin-bottom: 25px;
+}
+
+/* 그래프 박스 */
+.graph {
+    background-color: #fff;
+    padding: 25px; /* 패딩 증가 */
+    border-radius: 12px; /* 테두리 반경 증가 */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* 그림자 증가 */
+    flex: 1;
+    max-width: 105%; /* 기존 70%에서 105%로 증가 */
+    transition: all 0.3s ease;
+}
+
+.graph h2 {
+    margin-bottom: 20px; /* 여백 증가 */
+    color: #34495e;
+    font-size: 2em; /* 폰트 크기 증가 */
+}
+
+.graph img {
+    width: 100%; /* 이미지가 컨테이너에 맞게 확장 */
+    height: auto;
+    border-radius: 8px; /* 테두리 반경 증가 */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    max-width: 225%; /* 이전 150%에서 225%로 증가 (1.5배 추가) */
+    /* 만약 이미지가 너무 커지면 아래 주석을 해제하여 transform을 사용할 수 있습니다 */
+    /* transform: scale(2.25); */
+}
+
+.graph img:hover {
+    transform: scale(1.05); /* 마우스 호버 시 약간 확대 */
+}
+
+/* 애니메이션 제어 버튼 */
+.controls-navigation {
+    margin: 25px 0; /* 여백 증가 */
+}
+
+.controls-navigation button {
+    padding: 18px 36px; /* 패딩 증가 */
+    margin: 0 15px; /* 여백 증가 */
+    font-size: 1.2em; /* 폰트 크기 증가 */
+    border: none;
+    border-radius: 8px; /* 테두리 반경 증가 */
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.controls-navigation button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px); /* 호버 시 약간 더 상승 */
+}
+
+/* 현재 시간 표시 */
+.time-indicator {
+    font-size: 1.5em; /* 폰트 크기 증가 */
+    color: #34495e;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 2400px) {
+    .container {
+        max-width: 2000px; /* 컨테이너 크기 조정 */
+    }
+}
+
+@media (max-width: 1600px) {
+    .container {
+        max-width: 1600px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .graph-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .graph {
+        max-width: 90%;
+    }
+
+    .controls-navigation button {
+        margin: 15px 7.5px;
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .controls label {
+        font-size: 1em;
+    }
+
+    .controls select {
+        padding: 8px 14px;
+        font-size: 1em;
+    }
+
+    .graph {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .graph h2 {
+        font-size: 1.6em;
+    }
+
+    .controls-navigation button {
+        padding: 12px 24px;
+        margin: 7px;
+        font-size: 1em;
+        width: 130px;
+    }
+
+    .time-indicator {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .controls label {
+        font-size: 0.9em;
+    }
+
+    .controls select {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    .graph h2 {
+        font-size: 1.3em;
+    }
+
+    .controls-navigation button {
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 0.9em;
+        width: 120px;
+    }
+
+    .time-indicator {
+        font-size: 1em;
+    }
+}
+
+/* 툴팁 스타일 */
+.graph img {
+    position: relative;
+}
+
+.graph img:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 15px; /* 여백 증가 */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(52, 73, 94, 0.95); /* 배경색 어둡게 */
+    color: #fff;
+    padding: 6px 12px; /* 패딩 증가 */
+    border-radius: 5px; /* 테두리 반경 증가 */
+    white-space: nowrap;
+    font-size: 1em; /* 폰트 크기 증가 */
+    pointer-events: none;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* 왼쪽 상단 네비게이션 버튼 */
+.top-left-button {
+    position: fixed; /* 화면에 고정 */
+    top: 20px;       /* 화면 상단에서 20px 떨어진 위치 */
+    left: 20px;      /* 화면 왼쪽에서 20px 떨어진 위치 */
+    padding: 10px 20px; /* 버튼 내부 여백 */
+    background-color: #3498db; /* 버튼 배경색 */
+    color: #fff;     /* 버튼 텍스트 색상 */
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    border-radius: 5px; /* 버튼 모서리 둥글게 */
+    font-size: 1em;  /* 버튼 텍스트 크기 */
+    z-index: 1000;   /* 다른 요소보다 위에 표시 */
+    transition: background-color 0.3s, transform 0.2s; /* 호버 시 애니메이션 */
+}
+
+.top-left-button:hover {
+    background-color: #2980b9; /* 호버 시 배경색 변경 */
+    transform: translateY(-2px); /* 호버 시 살짝 위로 이동 */
+}
+
+/* 반응형 디자인: 작은 화면 */
+@media (max-width: 768px) {
+    .top-left-button {
+        padding: 8px 16px; /* 패딩 감소 */
+        font-size: 0.9em;  /* 텍스트 크기 감소 */
+        top: 10px;         /* 상단 여백 감소 */
+        left: 10px;        /* 왼쪽 여백 감소 */
+    }
+}
+
+@media (max-width: 480px) {
+    .top-left-button {
+        padding: 6px 12px; /* 패딩 추가 감소 */
+        font-size: 0.8em;  /* 텍스트 크기 추가 감소 */
+        top: 8px;          /* 상단 여백 추가 감소 */
+        left: 8px;         /* 왼쪽 여백 추가 감소 */
+    }
+}

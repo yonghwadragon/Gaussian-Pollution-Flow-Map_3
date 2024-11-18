@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>명지소각장: 가우시안 확산 모델</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="https://yonghwadragon.github.io/Gaussian-Pollution-Flow-Map/" class="top-left-button">
+        하나씩 보기
+    </a>
+    <div class="container">
+        <h1>명지소각장: 가우시안 확산 모델</h1>
+        
+        <!-- 오염물질 선택 -->
+        <div class="controls">
+            <label for="pollutant-select">오염물질 선택:</label>
+            <select id="pollutant-select">
+                <option value="CO" selected>CO</option>
+                <option value="PM25">PM2.5</option>
+            </select>
+        </div>
+
+        <!-- 그래프 표시 영역 -->
+        <div class="graph-container">
+            <!-- 위에서 본 그래프 -->
+            <div class="graph top-view-graph">
+                <h2 id="top-graph-title">CO 위에서 본 그래프</h2>
+                <img id="top-view-image" src="UP_CO/plot_11-01-01.png" alt="위에서 본 그래프" title="위에서 본 그래프: 오염물질 확산">
+            </div>
+            
+            <!-- 옆에서 본 그래프 -->
+            <div class="graph side-view-graph">
+                <h2 id="side-graph-title">CO 옆에서 본 그래프</h2>
+                <img id="side-view-image" src="SIDE_CO/plot_11-01-01.png" alt="옆에서 본 그래프" title="옆에서 본 그래프: 오염물질 확산">
+            </div>
+        </div>
+
+        <!-- 애니메이션 제어 버튼 -->
+        <div class="controls-navigation">
+            <button id="prev-btn">이전</button>
+            <button id="play-pause-btn">재생</button>
+            <button id="next-btn">다음</button>
+        </div>
+
+        <!-- 현재 시간 표시 -->
+        <div class="time-indicator">
+            <p>현재 시간: <span id="current-time">1시</span></p>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
