@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateImages() {
         const hourString = String(currentHour).padStart(2, '0');
         // 위에서 본 그래프 업데이트
-        topViewImage.src = `UP_${currentPollutant}/plot_11-01-${hourString}.png`;
+        topViewImage.src = `UP_${currentPollutant}/map_11-01_${hourString}.png`;
         topGraphTitle.textContent = `${currentPollutant.toUpperCase()} 위에서 본 그래프`;
 
         // 옆에서 본 그래프 업데이트
-        sideViewImage.src = `SIDE_${currentPollutant}/plot_11-01-${hourString}.png`;
+        sideViewImage.src = `SIDE_${currentPollutant}/map_11-01_${hourString}.png`;
         sideGraphTitle.textContent = `${currentPollutant.toUpperCase()} 옆에서 본 그래프`;
 
         // 현재 시간 업데이트
